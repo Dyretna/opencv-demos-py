@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opencv-demos-py"
+version = "0.1.0"
+description = "Selected Demos and code written mainly written for assignments for 'Applied AI' course at Teknikhögskolan 2025/2026"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Jesper Anteryd", email = "jesper.anteryd@proton.me"}
+]
+keywords = ["computer-vision", "opencv", "ai", "LLM", "openAI", "education"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "opencv-contrib-python==4.8.0.76",
+    "numpy==1.24.0",
+    "matplotlib>=3.7.0",
+    "pillow>=10.0.0",
+    "ipykernel>=6.25.0",
+    "ipython>=8.14.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=3.3.0",
+    "python-dotenv==1.2.1"
+]
+
+[project.urls]
+Repository = "https://github.com/Dyretna/opencv-demos-py"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["cv_utils*"]
